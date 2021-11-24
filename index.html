@@ -20,6 +20,7 @@
           // Part 3. Handle a successful enrollment's accessToken
           onSuccess: function(enrollment) {
             console.log("User enrolled successfully: %o", enrollment);
+            window.webkit.messageHandlers.tellerConnect.postMessage(enrollment.accessToken)
           },
           onExit: function() {
             console.log("User closed Teller Connect");
